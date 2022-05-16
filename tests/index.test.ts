@@ -12,11 +12,16 @@ test("it works for all locales", (t) => {
       localeArbitrary,
       fc.float({ noNaN: true, noDefaultInfinity: true }),
       (locale, value) => {
+        // we compare against a formatted value since Intl.NumberFormat has a
+        // maximum precision limit, causing the test to fail unnecessarily
         const [formattedToEn, formattedToLocale] = ["en", locale].map((l) =>
           Intl.NumberFormat(l).format(value)
         );
+        // parseFloat can't deal with comma thousands separators, so we strip
+        // them
         const expected = parseFloat(formattedToEn.replace(/,/g, ""));
         const parsed = parseNumberI18n(formattedToLocale, locale);
+
         t.is(
           parsed,
           expected,
@@ -24,6 +29,6 @@ test("it works for all locales", (t) => {
         );
       }
     ),
-    { numRuns: 10000 }
+    { numRuns: 10000 } // run it more than the default 100 times
   );
 });
