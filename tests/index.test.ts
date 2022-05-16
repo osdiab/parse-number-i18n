@@ -2,6 +2,7 @@ import test from "ava";
 import fc from "fast-check";
 import { parseNumberI18n } from "../src";
 
+// TODO: allow any locale once they're supported
 const localeArbitrary = fc.oneof(
   ...(["en", "de", "fr", "in"] as const).map((v) => fc.constant(v))
 );
