@@ -1,7 +1,7 @@
 # parse-number-i18n
 
 Lightweight library for locale-aware number parsing, using browser Intl locale
-data. Well tested with [`fast-check`](https://github.com/dubzzz/fast-check)
+data. Well tested thanks to [`fast-check`](https://github.com/dubzzz/fast-check)
 
 ## Usage
 
@@ -24,11 +24,17 @@ parseNumberI18n("123,456.78", "en");
   - Modern browsers ship with all locales by default (citation needed)
   - You can polyfill it with [FormatJS](https://formatjs.io/) if it does not
 
+## Unsupported features (as of now)
+
+- Locales with non-Western numerals (e.g. Arabic, Bengali)
+- Numbers that don't use consistent separators (e.g. Chinese/Japanese numbers
+  written with Chinese characters)
+
 ## TODO for release
 
-- [ ] support locales that do not use Western Arabic numerals
 - [ ] test that package is configured properly to be easily included
   - [ ] in web apps
   - [ ] in Node scripts
   - [ ] in Deno
 - [ ] test that this doesn't break in modern environments
+- [ ] allow parsing numbers with a third party number library (e.g. big.js)
