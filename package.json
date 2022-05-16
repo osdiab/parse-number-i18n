@@ -8,10 +8,12 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
+    "@swc-node/register": "^1.5.1",
     "@typescript-eslint/eslint-plugin": "^5.23.0",
     "@typescript-eslint/parser": "^5.23.0",
+    "ava": "^4.2.0",
     "eslint": "^8.15.0",
-    "fast-check": "^2.25.0",
+    "fast-check": "3.0.0-alpha.2.25.0.0",
     "prettier": "^2.6.2",
     "typescript": "^4.6.4"
   }
