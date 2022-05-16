@@ -1,0 +1,10 @@
+{
+  "name": "parse-number-i18n",
+  "version": "0.0.0",
+  "description": "Parse numbers based on i18n formatting",
+  "main": "dist/index.js",
+  "repository": "https://github.com/osdiab/parse-number-i18n",
+  "author": "Omar Diab",
+  "license": "MIT",
+  "private": false
+}
